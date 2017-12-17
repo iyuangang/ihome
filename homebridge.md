@@ -1,3 +1,11 @@
+# Mi Gateway work with Homebridge
+## OS: openSUSE 42.3 aarch64 Linux 4.4.92-31
+1. Install nodejs `sudo zypper in nodejs`
+2. Install mDNS devel `sudo zypper in avahi-compat-mDNSResponder-devel`
+3. Install homebridge with npm `sudo npm install -g --unsafe-perm homebridge`
+4. Install Mihome homebridge plugin `sudo npm install -g homebridge-aqara`
+
+
 # My main issues were:
 
 The location of my homebridge binary. Step 2
