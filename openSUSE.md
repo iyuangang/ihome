@@ -9,3 +9,4 @@ sudo vim /etc/dracut.conf.d/raspberrypi_modules.conf
 ```
 mkinitrd -f
 ```
+
