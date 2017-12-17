@@ -1,17 +1,66 @@
 # Mi Gateway work with Homebridge
 ## OS: openSUSE 42.3 aarch64 Linux 4.4.92-31
-1. Install nodejs `sudo zypper in nodejs`
-2. Install mDNS devel `sudo zypper in avahi-compat-mDNSResponder-devel`
-3. Install homebridge with npm `sudo npm install -g --unsafe-perm homebridge`
-4. Install Mihome homebridge plugin `sudo npm install -g homebridge-aqara`
+1. Install nodejs 
+`sudo zypper in nodejs`
+2. Install mDNS devel 
+`sudo zypper in avahi-compat-mDNSResponder-devel`
+3. Install homebridge with npm 
+`sudo npm install -g --unsafe-perm homebridge`
+4. Install Mihome homebridge plugin 
+`sudo npm install -g homebridge-aqara`
+5. `vim ~/.homebridge/config.json` and paste this
+Note! This is sample, do not paste this
+```
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-154"
+    },
+    
+    "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
 
+    "accessories": [
+        {
+            "accessory": "WeMo",
+            "name": "Coffee Maker"
+        }
+    ],
 
-# My main issues were:
+    "platforms": [
+        {
+            "platform" : "PhilipsHue",
+            "name" : "Hue"
+        }
+    ]
+}
+```
+Note! paste this and change "sid", "password" into yours
+Note! "sid" must be lower-case letter.
+```
+{
+        "bridge":
+        {
+                "name":"Homebridge",
+                "username":"FF:00:FF:00:FF:00",
+                "port":10101,
+                "pin":"101-01-010"
+        },
+        "platforms":
+        [
+                {
+                        "platform":"AqaraPlatform",
+                        "sid":["34ce008ae052"],
+                        "password":["68782BE4B8A64466"]
+                }
+        ]
+} 
+```
+6. run `homebridge`
 
-The location of my homebridge binary. Step 2
-Permissions were not correct and the service failed to load. Step 7
-I needed the persist folder in /var/homebridge directory. Step 6
-Here are the steps that worked for me:
+## Setup to start on bootup 
+
 1. `sudo vim /etc/default/homebridge` and paste this 
 ```
 # Defaults / Configuration options for homebridge
