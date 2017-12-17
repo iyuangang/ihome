@@ -9,7 +9,29 @@
 4. Install Mihome homebridge plugin 
 `sudo npm install -g homebridge-aqara`
 5. `vim ~/.homebridge/config.json` and paste this
-Note! This is sample, do not paste this
+Note! paste this and change "sid", "password" into yours
+Note! "sid" must be lower-case letter.
+```
+{
+        "bridge":
+        {
+                "name":"Homebridge",
+                "username":"FF:00:FF:00:FF:00",
+                "port":10101,
+                "pin":"101-01-010"
+        },
+        "platforms":
+        [
+                {
+                        "platform":"AqaraPlatform",
+                        "sid":["34ce008ae052"],
+                        "password":["68782BE4B8A64466"]
+                }
+        ]
+} 
+```
+
+Note! Do not paste this. This is sample, modify this, if you want add more device.
 ```
 {
     "bridge": {
@@ -35,27 +57,6 @@ Note! This is sample, do not paste this
         }
     ]
 }
-```
-Note! paste this and change "sid", "password" into yours
-Note! "sid" must be lower-case letter.
-```
-{
-        "bridge":
-        {
-                "name":"Homebridge",
-                "username":"FF:00:FF:00:FF:00",
-                "port":10101,
-                "pin":"101-01-010"
-        },
-        "platforms":
-        [
-                {
-                        "platform":"AqaraPlatform",
-                        "sid":["34ce008ae052"],
-                        "password":["68782BE4B8A64466"]
-                }
-        ]
-} 
 ```
 6. run `homebridge`
 
