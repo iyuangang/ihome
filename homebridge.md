@@ -11,8 +11,11 @@
 5. Install Mihome homebridge plugin 
 `sudo npm install -g homebridge-aqara`
 6. `vim ~/.homebridge/config.json` and paste this
+
 Note! paste this and change "sid", "password" into yours
+
 Note! "sid" must be lower-case letter.
+
 ```
 {
         "bridge":
