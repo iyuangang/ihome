@@ -4,11 +4,13 @@
 `sudo zypper in nodejs`
 2. Install mDNS devel 
 `sudo zypper in avahi-compat-mDNSResponder-devel`
-3. Install homebridge with npm 
+3. Install libopenssl-devel
+`sudo zypper in libopenssl-devel`
+4. Install homebridge with npm 
 `sudo npm install -g --unsafe-perm homebridge`
-4. Install Mihome homebridge plugin 
+5. Install Mihome homebridge plugin 
 `sudo npm install -g homebridge-aqara`
-5. `vim ~/.homebridge/config.json` and paste this
+6. `vim ~/.homebridge/config.json` and paste this
 Note! paste this and change "sid", "password" into yours
 Note! "sid" must be lower-case letter.
 ```
@@ -58,7 +60,7 @@ Note! Do not paste this. This is sample, modify this, if you want add more devic
     ]
 }
 ```
-6. run `homebridge`
+7. run `homebridge`
 
 ## Setup to start on bootup 
 
